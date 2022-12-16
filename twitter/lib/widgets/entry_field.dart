@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 class CustomEntryField extends StatelessWidget {
   final String hint;
   final TextEditingController controller;
-  late final bool isPassword;
+  final bool isPassword;
 
-  CustomEntryField(
+  const CustomEntryField(
       {Key? key,
       required this.hint,
       required this.controller,
