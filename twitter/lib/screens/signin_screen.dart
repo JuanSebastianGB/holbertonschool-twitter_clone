@@ -83,12 +83,14 @@ class _SingInState extends State<SingIn> {
               GestureDetector(
                 onTap: (() {}),
                 child: Center(
-                  child: Text('Forget password?',
-                      style: GoogleFonts.mulish(
-                        color: Colors.blue,
-                        fontWeight: FontWeight.w800,
-                        fontSize: 16,
-                      )),
+                  child: Text(
+                    'Forget password?',
+                    style: GoogleFonts.mulish(
+                      color: Colors.blue,
+                      fontWeight: FontWeight.w800,
+                      fontSize: 16,
+                    ),
+                  ),
                 ),
               ),
             ],
