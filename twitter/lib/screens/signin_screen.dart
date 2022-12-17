@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:twitter/screens/forgot_password_screen.dart';
 import 'package:twitter/widgets/entry_field.dart';
 import 'package:twitter/widgets/flat_button.dart';
 
@@ -80,7 +81,13 @@ class _SingInState extends State<SingIn> {
               height: 30,
             ),
             GestureDetector(
-              onTap: (() {}),
+              onTap: (() {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ForgetPassword()),
+                );
+              }),
               child: Center(
                 child: Text(
                   'Forget password?',

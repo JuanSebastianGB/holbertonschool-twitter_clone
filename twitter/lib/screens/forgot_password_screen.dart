@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:twitter/screens/signup_screen.dart';
 import 'package:twitter/widgets/entry_field.dart';
 import 'package:twitter/widgets/flat_button.dart';
 
@@ -98,42 +97,6 @@ class _ForgetPasswordState extends State<ForgetPassword> {
               child: CustomFlatButton(
                 label: "Submit",
                 onPressed: () {},
-              ),
-            ),
-            GestureDetector(
-              onTap: (() {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const SignUp()),
-                );
-              }),
-              child: Center(
-                child: Text('Sign up',
-                    style: GoogleFonts.mulish(
-                      color: Colors.blue,
-                      fontWeight: FontWeight.w800,
-                      fontSize: 16,
-                    )),
-              ),
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            GestureDetector(
-              onTap: (() {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const ForgetPassword()),
-                );
-              }),
-              child: Center(
-                child: Text('Forget password?',
-                    style: GoogleFonts.mulish(
-                      color: Colors.blue,
-                      fontWeight: FontWeight.w800,
-                      fontSize: 16,
-                    )),
               ),
             ),
           ],
