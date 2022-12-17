@@ -46,6 +46,12 @@ class _SignUpState extends State<SignUp> {
         elevation: 0.0,
         backgroundColor: Colors.white,
         centerTitle: true,
+        leading: BackButton(
+          color: Colors.blue,
+          onPressed: (() {
+            Navigator.of(context).pop();
+          }),
+        ),
         title: const Text("Sign up", style: TextStyle(color: Colors.black)),
       ),
       body: SingleChildScrollView(
@@ -80,7 +86,7 @@ class _SignUpState extends State<SignUp> {
             ),
             Center(
               child: CustomFlatButton(
-                label: 'Sign up',
+                label: 'Submit',
                 onPressed: () {},
               ),
             )

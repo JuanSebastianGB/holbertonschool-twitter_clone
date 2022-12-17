@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:twitter/screens/forgot_password_screen.dart';
+import 'package:twitter/screens/signup_screen.dart';
 import 'package:twitter/widgets/entry_field.dart';
 import 'package:twitter/widgets/flat_button.dart';
 
@@ -67,7 +68,14 @@ class _SingInState extends State<SingIn> {
               height: 50,
             ),
             GestureDetector(
-              onTap: (() {}),
+              onTap: (() {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SignUp(),
+                  ),
+                );
+              }),
               child: Center(
                 child: Text('Sign up',
                     style: GoogleFonts.mulish(
@@ -85,7 +93,8 @@ class _SingInState extends State<SingIn> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const ForgetPassword()),
+                    builder: (context) => const ForgetPassword(),
+                  ),
                 );
               }),
               child: Center(
