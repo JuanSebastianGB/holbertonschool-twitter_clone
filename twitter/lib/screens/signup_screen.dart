@@ -56,8 +56,7 @@ class _SignUpState extends State<SignUp> {
             ),
             SizedBox(
               height: 100,
-              child: Image.asset(
-                  'http://assets.stickpng.com/images/580b57fcd9996e24bc43c53e.png'),
+              child: Image.asset('assets/images/twit.png'),
             ),
             CustomEntryField(
               hint: 'Enter name',

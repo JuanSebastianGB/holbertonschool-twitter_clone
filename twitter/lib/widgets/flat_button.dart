@@ -12,7 +12,7 @@ class CustomFlatButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.fromLTRB(45, 0, 45, 0),
+      padding: const EdgeInsets.fromLTRB(45, 0, 45, 0),
       child: TextButton(
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(Colors.blue),
