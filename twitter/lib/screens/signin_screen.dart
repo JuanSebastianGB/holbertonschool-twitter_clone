@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:twitter/screens/forgot_password_screen.dart';
+import 'package:twitter/screens/home_screen.dart';
 import 'package:twitter/screens/signup_screen.dart';
 import 'package:twitter/widgets/entry_field.dart';
 import 'package:twitter/widgets/flat_button.dart';
@@ -61,7 +62,14 @@ class _SingInState extends State<SingIn> {
             Center(
               child: CustomFlatButton(
                 label: "Submit",
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const HomeScreen(),
+                    ),
+                  );
+                },
               ),
             ),
             const SizedBox(
