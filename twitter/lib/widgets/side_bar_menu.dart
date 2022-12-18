@@ -27,13 +27,13 @@ class _SideBarMenuState extends State<SideBarMenu> {
                   child: Column(
                     children: [
                       Row(
-                        children: [
-                          const CircleAvatar(
+                        children: const [
+                          CircleAvatar(
                             backgroundImage: NetworkImage(
                                 'https://intranet.hbtn.io/assets/holberton-logo-full-default-9c9d1742abc6ffb045e9b4af78ba85770bf39126bcf2c43af9d6a53ee4aabd3d.png'),
                             radius: 30.0,
                           ),
-                          const SizedBox(
+                          SizedBox(
                             width: 200,
                           )
                         ],

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomFlatButton extends StatelessWidget {
@@ -18,17 +17,20 @@ class CustomFlatButton extends StatelessWidget {
           backgroundColor: MaterialStateProperty.all(Colors.blue),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(30.0),
             ),
           ),
         ),
         child: Center(
-          child: Text(
-            label,
-            style: GoogleFonts.mulish(
-              color: Colors.white,
-              fontWeight: FontWeight.w800,
-              fontSize: 18,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              label,
+              style: GoogleFonts.mulish(
+                color: Colors.white,
+                fontWeight: FontWeight.w800,
+                fontSize: 18,
+              ),
             ),
           ),
         ),

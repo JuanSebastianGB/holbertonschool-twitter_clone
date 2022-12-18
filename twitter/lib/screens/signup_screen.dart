@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:twitter/widgets/entry_field.dart';
 import 'package:twitter/widgets/flat_button.dart';
@@ -41,7 +40,7 @@ class _SignUpState extends State<SignUp> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Color.fromARGB(255, 247, 246, 246),
+      backgroundColor: const Color.fromARGB(255, 247, 246, 246),
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: Colors.white,

@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:twitter/widgets/bar_menu.dart';
 import 'package:twitter/widgets/side_bar_menu.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -25,11 +25,13 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: Colors.blue,
-        title: const Text('Home', style: TextStyle(color: Colors.white)),
+        backgroundColor: Colors.white,
+        title: const Text('Home', style: TextStyle(color: Colors.blue)),
+        iconTheme: const IconThemeData(color: Colors.blue),
       ),
       drawer: const SideBarMenu(),
       body: Container(),
+      bottomNavigationBar: const BottomBarMenu(),
     );
   }
 }

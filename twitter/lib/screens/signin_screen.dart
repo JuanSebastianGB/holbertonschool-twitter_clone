@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:twitter/screens/forgot_password_screen.dart';
@@ -6,6 +5,13 @@ import 'package:twitter/screens/home_screen.dart';
 import 'package:twitter/screens/signup_screen.dart';
 import 'package:twitter/widgets/entry_field.dart';
 import 'package:twitter/widgets/flat_button.dart';
+
+class SingIn extends StatefulWidget {
+  const SingIn({super.key});
+
+  @override
+  State<SingIn> createState() => _SingInState();
+}
 
 class _SingInState extends State<SingIn> {
   late TextEditingController _emailController = TextEditingController();
@@ -29,7 +35,7 @@ class _SingInState extends State<SingIn> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Color.fromARGB(255, 247, 246, 246),
+      backgroundColor: const Color.fromARGB(255, 247, 246, 246),
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: Colors.white,
@@ -121,11 +127,4 @@ class _SingInState extends State<SingIn> {
       ),
     );
   }
-}
-
-class SingIn extends StatefulWidget {
-  const SingIn({super.key});
-
-  @override
-  State<SingIn> createState() => _SingInState();
 }

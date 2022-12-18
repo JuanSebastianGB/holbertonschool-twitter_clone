@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:twitter/widgets/entry_field.dart';
@@ -30,7 +29,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Color.fromARGB(255, 247, 246, 246),
+      backgroundColor: const Color.fromARGB(255, 247, 246, 246),
       appBar: AppBar(
         leading: BackButton(
           color: Colors.blue,
