@@ -22,17 +22,30 @@ class UsersSearchResultsWidget extends StatelessWidget {
     return ListTile(
       leading: CircleAvatar(
         backgroundImage: NetworkImage(imgUrl),
+        radius: 25.0,
       ),
-      title: Text(
-        name,
-        style: GoogleFonts.mulish(
-          fontSize: 12,
-        ),
+      title: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            name,
+            style: GoogleFonts.mulish(
+              fontSize: 25,
+              fontWeight: FontWeight.w800,
+            ),
+          ),
+          Text(
+            bio,
+            style: GoogleFonts.mulish(
+              fontSize: 22,
+            ),
+          ),
+        ],
       ),
       subtitle: Text(
-        '@$username',
+        username,
         style: GoogleFonts.mulish(
-          fontSize: 12,
+          fontSize: 22,
         ),
       ),
     );

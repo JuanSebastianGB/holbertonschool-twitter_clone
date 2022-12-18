@@ -35,7 +35,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             ],
           ),
           const Icon(
-            Icons.brightness_high_sharp,
+            Icons.settings,
             color: Colors.blue,
             size: 50,
           )
