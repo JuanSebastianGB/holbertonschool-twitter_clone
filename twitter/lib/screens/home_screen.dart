@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:twitter/widgets/bar_menu.dart';
+import 'package:twitter/widgets/post_widget.dart';
 import 'package:twitter/widgets/side_bar_menu.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -30,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
         iconTheme: const IconThemeData(color: Colors.blue),
       ),
       drawer: const SideBarMenu(),
-      body: Container(),
+      body: const PostWidget(),
       bottomNavigationBar: const BottomBarMenu(),
     );
   }
