@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:twitter/providers/auth_state.dart';
 import 'package:twitter/providers/share_state.dart';
 import 'package:twitter/screens/signin_screen.dart';
 
@@ -10,6 +11,9 @@ void main() {
         ChangeNotifierProvider(
           create: (_) => SharedState(),
         ),
+        ChangeNotifierProvider(
+          create: (_) => Auth(),
+        )
       ],
       child: const MyApp(),
     ),
