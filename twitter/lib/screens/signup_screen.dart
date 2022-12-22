@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:twitter/providers/auth_state.dart';
 import 'package:twitter/widgets/entry_field.dart';
 import 'package:twitter/widgets/flat_button.dart';
 
@@ -86,12 +87,49 @@ class _SignUpState extends State<SignUp> {
             Center(
               child: CustomFlatButton(
                 label: 'Submit',
-                onPressed: () {},
+                onPressed: signUpUser,
               ),
             )
           ],
         ),
       ),
     );
+  }
+
+  void signUpUser() async {
+    String textError = '';
+    final signUp = await Auth().attemptSignUp(
+        email: _emailController.text.trim(),
+        name: _nameController.text.trim(),
+        password: _passwordController.text.trim(),
+        passwordConfirmation: _confirmController.text.trim());
+    switch (signUp) {
+      case Errors.none:
+        textError = 'Account Created!';
+        break;
+      case Errors.weakError:
+        textError = 'The password provided is too weak.';
+        break;
+      case Errors.matchError:
+        textError = 'Passwords doesn’t match.';
+        break;
+      case Errors.existsError:
+        textError = 'An account already exists with that email.';
+        break;
+      case Errors.error:
+        textError = 'Failed to Login! Please try later.';
+        break;
+      default:
+        textError = 'Unknown error';
+    }
+    final snackBar = SnackBar(
+      content: Text(textError),
+      backgroundColor: signUp == Errors.none ? Colors.green : Colors.red,
+      action: SnackBarAction(
+        label: '',
+        onPressed: () {},
+      ),
+    );
+    if (mounted) ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }

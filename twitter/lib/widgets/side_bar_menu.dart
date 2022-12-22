@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:twitter/models/user.dart';
+import 'package:twitter/providers/auth_state.dart';
 import 'package:twitter/screens/signin_screen.dart';
 
 class SideBarMenu extends StatefulWidget {
@@ -8,10 +10,23 @@ class SideBarMenu extends StatefulWidget {
   State<SideBarMenu> createState() => _SideBarMenuState();
 }
 
+String circleAvatarString =
+    'https://intranet.hbtn.io/assets/holberton-logo-full-default-9c9d1742abc6ffb045e9b4af78ba85770bf39126bcf2c43af9d6a53ee4aabd3d.png';
+
 class _SideBarMenuState extends State<SideBarMenu> {
   @override
   void initState() {
     super.initState();
+  }
+
+  User? user;
+  Future<void> getAsync() async {
+    try {
+      user = await Auth().getCurrentUserModel();
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+    if (mounted) setState(() {});
   }
 
   @override
@@ -27,13 +42,14 @@ class _SideBarMenuState extends State<SideBarMenu> {
                   child: Column(
                     children: [
                       Row(
-                        children: const [
+                        children: [
                           CircleAvatar(
                             backgroundImage: NetworkImage(
-                                'https://intranet.hbtn.io/assets/holberton-logo-full-default-9c9d1742abc6ffb045e9b4af78ba85770bf39126bcf2c43af9d6a53ee4aabd3d.png'),
+                              circleAvatarString,
+                            ),
                             radius: 30.0,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 200,
                           )
                         ],
@@ -58,11 +74,11 @@ class _SideBarMenuState extends State<SideBarMenu> {
                         children: [
                           Container(
                             padding: const EdgeInsets.all(5),
-                            child: const Text("0 Followers"),
+                            child: Text("${user?.followers} Followers"),
                           ),
                           Container(
                             padding: const EdgeInsets.all(5),
-                            child: const Text("0 Following"),
+                            child: Text("${user?.following} Following"),
                           ),
                         ],
                       ),
