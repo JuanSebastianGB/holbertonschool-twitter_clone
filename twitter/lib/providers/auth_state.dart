@@ -39,7 +39,7 @@ class Auth extends ChangeNotifier {
       );
       return usersRef
           .add(User(
-            userId: userCredential.user!.uid,
+            userID: userCredential.user!.uid,
             email: email,
             displayName: name,
             userName: '@${name}Holberton',
@@ -89,7 +89,7 @@ class Auth extends ChangeNotifier {
     List<User>? users =
         querySnapshot.docs.map((doc) => doc.data()).cast<User>().toList();
     for (var user in users) {
-      if (user.userId == auth.currentUser?.uid) return user;
+      if (user.userID == auth.currentUser?.uid) return user;
     }
     return {} as User;
   }
