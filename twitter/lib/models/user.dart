@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:random_string/random_string.dart';
 import 'package:uuid/uuid.dart';
 
@@ -17,7 +18,7 @@ final usersRef =
 
 class User {
   String? key;
-  String? userID;
+  String userID;
   String? email;
   String? displayName;
   String? userName;
@@ -108,5 +109,31 @@ class User {
     Query query = usersRef.where("userID", isEqualTo: userID);
     QuerySnapshot querySnapshot = await query.get();
     return querySnapshot.docs.first.data() as User;
+  }
+
+  Future<String> getPostReference(String userID) async {
+    return FirebaseFirestore.instance
+        .collection('users')
+        .where('userID', isEqualTo: userID)
+        .get()
+        .then((value) {
+      for (var element in value.docs) {
+        return element.id;
+      }
+      return '';
+    });
+  }
+
+  Future<void> saveChangesFirebase(User user) async {
+    String userDocID = await getPostReference(user.userID);
+
+    await usersRef.doc(userDocID).update({
+      'coverImgUrl': user.coverImgUrl,
+      'imageUrl': user.imageUrl,
+      'displayName': user.displayName,
+      'userName': user.userName,
+      'bio': user.bio,
+    });
+    debugPrint('executed update profile');
   }
 }
