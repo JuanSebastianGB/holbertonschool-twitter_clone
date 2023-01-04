@@ -19,7 +19,7 @@ class Auth extends ChangeNotifier {
   final usersRef = FirebaseFirestore.instance
       .collection('users')
       .withConverter<User>(
-        fromFirestore: (snapshot, _) => User.fromJson(snapshot.data() ?? {}),
+        fromFirestore: (snapshot, _) => User().fromJson(snapshot.data() ?? {}),
         toFirestore: (user, _) => user.toJson(),
       );
 

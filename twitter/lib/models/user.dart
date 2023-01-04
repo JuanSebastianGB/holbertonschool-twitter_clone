@@ -7,8 +7,8 @@ const uuid = Uuid();
 final usersRef =
     FirebaseFirestore.instance.collection('users').withConverter<User>(
           fromFirestore: (snapshot, _) {
-            User.fromJson(snapshot.data()!);
-            return User.fromJson(
+            User().fromJson(snapshot.data()!);
+            return User().fromJson(
               snapshot.data() ?? {},
             );
           },
@@ -24,10 +24,10 @@ class User {
   String? imageUrl;
   int? followers;
   int? following;
-  List<dynamic>? followersList;
+  List<dynamic> followersList;
   List<dynamic>? followingList;
   String? bio;
-  String? coverImgUrl;
+  String coverImgUrl;
   bool isVerified;
 
   User({
@@ -78,7 +78,7 @@ class User {
     required this.isVerified,
   });
 
-  static User fromJson(Map<dynamic, dynamic> map) => User(
+  User fromJson(Map<dynamic, dynamic> map) => User(
         key: map['key'],
         userID: map['userId'],
         email: map['email'],
