@@ -28,9 +28,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     getAsync();
   }
 
-  String buttonText = '';
   dynamic data;
-  dynamic user;
   dynamic auth;
 
   Future<void> getAsync() async {
